@@ -106,6 +106,8 @@ stackdriver_exporter \
   --monitoring.metrics-type-prefixes "compute.googleapis.com/instance/cpu,compute.googleapis.com/instance/disk"
 ```
 
+It is also possible to export entire groups of metrics by just specifying the metrics hostname (instead of listing single metrics). For example, to export all available Compute Engine metrics you can start `stackdriver_exporter` with argument `--monitoring.metrics-type-prefixes "compute.googleapis.com"`. Be aware that some metric groups have a large number of metrics and labels that can lead to a lot of data being ingested by Prometheus (e.g. the load balancer).
+
 ## Contributing
 
 Refer to the [contributing guidelines][contributing].
